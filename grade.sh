@@ -8,7 +8,22 @@ mkdir grading-area
 git clone $1 student-submission
 echo 'Finished cloning'
 
+if [[ -f student-submission/ListExamples.java ]]
+then
+    echo "File Found!"
+else
+    echo "File Not Found"
+    exit 1
+fi
 
+cp student-submission/ListExamples.java grading-area
+cp TestListExamples.java grading-area
+cp -r lib grading-area
+
+for File in grading-area
+do
+    javac -cp CPATH $File 2> err.txt
+    java -cp CPATH $File
 # Draw a picture/take notes on the directory structure that's set up after
 # getting to this point
 
