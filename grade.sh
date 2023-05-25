@@ -31,6 +31,7 @@ fi
 java -cp $CPATH org.junit.runner.JUnitCore grading-area/TestListExamples > junit-output.txt
 
 
+
 FAILURE1=`grep -c "Failures: 1" junit-output.txt`
 FAILURE2=`grep -c "Failures: 2" junit-output.txt`
 FAILURE3=`grep -c "Failures: 3" junit-output.txt`
